@@ -119,6 +119,7 @@ struct LocalRecordingsView: View {
                             LabeledContent("Frames", value: String(info.framesWritten))
                             Text(info.outcome)
                         }
+                        SessionSyncSection(info: info)
                         Section("Export") {
                             RecordingCSVExportButton(info: info, folder: folder)
                             ShareLink("Export session details (JSON)", item: RecordingMetadataExport(info: info, folder: folder), preview: SharePreview(info.name))
